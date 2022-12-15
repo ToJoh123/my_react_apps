@@ -20,8 +20,8 @@ function App() {
   return (
 
   <div className="App">
-    <div className="display">Display{display || 0}</div>
-    <div className="memory">Memory:{memory}</div>
+    <div className="display">{display || 0}</div>
+    <div className="memory">{memory}</div>
     <div className="numbers">
       {numbers.map((number, index) =>
         <button key={index} onClick={() => {
