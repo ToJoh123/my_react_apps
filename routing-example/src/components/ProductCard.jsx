@@ -1,10 +1,11 @@
-//type B
-import { Link } from 'react-router-dom';
+//type A
+
+import { Link } from 'react-router-dom'
 
 
-const ProductCard = ({ product }) => {
+export default function ProductCard ({ product }) {
 	return (
-		<div className="product">
+		<div className='product'>
             <div>
                 <p>{product.description}</p>
                 <h4>
@@ -23,9 +24,8 @@ const ProductCard = ({ product }) => {
 				<h3>${product.price}</h3>
 				<p>{product.category}</p>
 				<button className="btn btn-primary">Add to Cart</button>
-				<Link to={`/product/${product.id}`}>Läs mer</Link>
+				<btn><Link to={`/product/${product.id}`}>Läs mer</Link></btn> 
 			</div>
 		</div>
 	);
 };
-export default ProductCard;

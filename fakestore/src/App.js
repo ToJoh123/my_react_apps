@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from './components/ProductCard';
 import './App.css';
 
-import './App.css';
 // save the urls in a variable and use it in the fetch
 const API_URL = 'https://fakestoreapi.com/products';
 
