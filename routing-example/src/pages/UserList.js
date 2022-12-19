@@ -9,6 +9,7 @@ export default function UserList() {
       const res = await fetch('https://fakestoreapi.com/users')
       const users = await res.json()
       setUsers(users)
+      console.log(users)
     }
 
     getUsers()
