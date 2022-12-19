@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from "react-router-dom"
+import ProductCard from '../components/ProductCard'
 
 export default function SingleProduct() { 
   const { id } = useParams()
@@ -22,11 +23,7 @@ export default function SingleProduct() {
 
   return (
     <>
-      <Link to="/">Back</Link>
-      <div className='product'>
-        <h1>{product.id} {product.title}</h1>
-        <p>{product.price}</p>
-      </div>
+      <ProductCard product={product} />
     </>
   )
 }
