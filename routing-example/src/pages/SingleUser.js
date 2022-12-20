@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from "react-router-dom"
+import UserCard from '../components/UserCard'
 
 export default function SingleUser() { 
   const { id } = useParams()
@@ -23,10 +24,7 @@ export default function SingleUser() {
   return (
     <>
       <Link to="/">Back</Link>
-      <div>
-        <h1>{user.name.firstname} {user.name.lastname}</h1>
-        <p>{user.phone}</p>
-      </div>
+      <UserCard key={user.id} user={user} />
     </>
   )
 }

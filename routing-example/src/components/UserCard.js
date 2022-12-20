@@ -31,6 +31,10 @@ export default function UserCard({ user }) {
         <td>{user.address.city}</td>
 			</tr>
 			<tr>
+				<th>Street</th>
+				<th>{user.addres}</th>
+			</tr>
+			<tr>
 				<th>Latitude</th>
 				<th>Longitude</th>
 			</tr>
