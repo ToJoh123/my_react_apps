@@ -8,12 +8,28 @@ export default function SingleMember() {
 	const [ member, setMember ] = useState(null);
 
 	useEffect(() => {
+		// async function handleDelete() {
+		// 	const response = await fetch(`http://localhost:3001/members/${id}`, {
+		// 		method: 'DELETE'
+		// 	});
+		// 	const data = await response.json();
+		// 	console.log(data);
+		// }
+		// async function handleSave() {
+		// 	const response = await fetch(`http://localhost:3001/members/${id}`, {
+		// 		method: 'PUT'
+		// 	});
+		// 	const data = await response.json();
+		// 	console.log(data);
+		// }
+
 		async function fetchMember() {
 			const response = await fetch(`http://localhost:3001/members/${id}`);
 			const data = await response.json();
 			setMember(data);
 		}
 		fetchMember();
+		// handleDelete();
 	}, []);
 
 	return (

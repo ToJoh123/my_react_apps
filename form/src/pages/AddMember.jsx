@@ -19,12 +19,15 @@ function AddMember() {
 
 		if (post.ok) {
 			console.log('New user created');
+			//this code will reload the page
+			window.location.reload();
 		} else {
 			console.log('Something went wrong');
 		}
 	};
 
 	return (
+		<>
 		<form onSubmit={handleSubmit}>
 			<label htmlFor="name">Name</label>
 			<input
@@ -39,6 +42,8 @@ function AddMember() {
 			<input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 			<button type="submit">Add member</button>
 		</form>
+		
+		</>
 	);
 }
 export default AddMember;

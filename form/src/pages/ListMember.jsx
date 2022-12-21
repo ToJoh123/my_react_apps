@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import MemberCard from '../components/MemberCard';
+import AddMember from './AddMember';
 
 function ListMember() {
-	const [ members, setMembers ] = useState([]);
+	const [ users, setMembers ] = useState([]);
 
 	useEffect(() => {
 		async function fetchMembers() {
@@ -16,9 +17,10 @@ function ListMember() {
 	return (
 		<div>
 			<h1>Members</h1>
-			{members.map((member) => {
+			{users.map((member) => {
 				return <MemberCard key={member.id} member={member} />;
 			})}
+			<AddMember />
 		</div>
 	);
 }
