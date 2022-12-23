@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 // const deleteBtn = async (memberId) => {
 // 	e.preventDefault();
@@ -10,6 +11,27 @@ import { useState } from 'react';
 // 	// 	console.log('User deleted');
 // 	// 	window.location.reload();
 // 	// }
+// };
+
+// const MemberCardLink = ({ member }) => {
+// 	const location = useLocation();
+// 	const currentPath = location.pathname;
+
+// 	let linkPath;
+// 	if (currentPath === '/member/' + member.id) {
+// 		linkPath = '/member/all';
+// 	} else {
+// 		linkPath = '/member/' + member.id;
+// 	}
+
+// 	let linkText;
+// 	if (currentPath.includes('/member/' + member.id)) {
+// 		linkText = 'tillbaka';
+// 	} else {
+// 		linkText = 'Läs mer';
+// 	}
+
+// 	return <Link to={linkPath}>{linkText}</Link>;
 // };
 
 export default function MemberCard({ member }) {
@@ -41,23 +63,26 @@ export default function MemberCard({ member }) {
 
 	// console.log(member);
 	return (
-		// <div key={member.id}>
-		// 	<h2>{member.name}</h2>
-		// 	<p>Age: {member.age}</p>
-		// 	<p>Email: {member.email}</p>
-		// 	<button>
-		// 		<MemberCardLink member={member} />
-		// 	</button>
-		// </div>
-		<form onSubmit={handleSave}>
-			<input type="number" value={id} hidden />
-			<label htmlFor="name">Name</label>
-			<input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-			<label htmlFor="age">Age</label>
-			<input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)} />
-			<label htmlFor="email">Email</label>
-			<input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-			<button type="submit">save</button>
-		</form>
+		<div key={member.id}>
+			<h2>{member.name}</h2>
+			<p>Age: {member.age}</p>
+			<p>Email: {member.email}</p>
+			{/* <button>
+				<MemberCardLink member={member} />
+			</button> */}
+			<button>
+				<Link to={`/member/${member.id}`}>Läs mer</Link>
+			</button>
+		</div>
+		// <form onSubmit={handleSave}>
+		// 	<input type="number" value={id} hidden />
+		// 	<label htmlFor="name">Name</label>
+		// 	<input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+		// 	<label htmlFor="age">Age</label>
+		// 	<input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)} />
+		// 	<label htmlFor="email">Email</label>
+		// 	<input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+		// 	<button type="submit">save</button>
+		// </form>
 	);
 }

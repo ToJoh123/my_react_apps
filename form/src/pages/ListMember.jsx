@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import MemberCard from '../components/MemberCard';
-import AddMember from './AddMember';
 
 function ListMember() {
 	const [ users, setMembers ] = useState([]);
@@ -20,7 +19,6 @@ function ListMember() {
 			{users.map((member) => {
 				return <MemberCard key={member.id} member={member} />;
 			})}
-			<AddMember />
 		</div>
 	);
 }

@@ -1,25 +1,7 @@
 {
   "members": [
     {
-      "name": "Tom",
-      "age": "30",
-      "email": "tom.johansson123@gmail.com",
-      "id": 1
-    },
-    {
-      "name": "Tom",
-      "age": "30",
-      "email": "tom.johansson123@gmail.com",
-      "id": 2
-    },
-    {
-      "name": "Tom",
-      "age": "143123",
-      "email": "tom.johansson123@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "jakshdsjal",
+      "name": "asdasd",
       "age": "1394193",
       "email": "dlfjdi@gmail.com",
       "id": 4
@@ -29,12 +11,6 @@
       "age": "1",
       "email": "kjas@maik.com",
       "id": 5
-    },
-    {
-      "name": "joha",
-      "age": "31",
-      "email": "test@gmail.com",
-      "id": 6
     },
     {
       "name": "Hello",
@@ -83,6 +59,12 @@
       "age": "23",
       "email": "yoo@amil.com",
       "id": 14
+    },
+    {
+      "name": "haaba",
+      "age": "34",
+      "email": "test@gmail.com",
+      "id": 15
     }
   ]
 }

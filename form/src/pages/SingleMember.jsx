@@ -1,42 +1,45 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Redirect } from 'react-router-dom';
 
-import MemberCard from '../components/MemberCard';
+import EditMemberCard from '../components/EditMemberCard';
 
 export default function SingleMember() {
 	const { id } = useParams();
 	const [ member, setMember ] = useState(null);
 
-	useEffect(() => {
-		// async function handleDelete() {
-		// 	const response = await fetch(`http://localhost:3001/members/${id}`, {
-		// 		method: 'DELETE'
-		// 	});
-		// 	const data = await response.json();
-		// 	console.log(data);
-		// }
-		// async function handleSave() {
-		// 	const response = await fetch(`http://localhost:3001/members/${id}`, {
-		// 		method: 'PUT'
-		// 	});
-		// 	const data = await response.json();
-		// 	console.log(data);
-		// }
+	async function handleDelete() {
+		const response = await fetch(`http://localhost:3001/members/${id}`, {
+			method: 'DELETE'
+		});
+		const data = await response.json();
+		//redirect to /member/all
+		window.location.href = '/member/all';
+	}
 
+	async function handleSave() {
+		const response = await fetch(`http://localhost:3001/members/${id}`, {
+			method: 'PUT'
+		});
+		const data = await response.json();
+		console.log(data);
+	}
+
+	useEffect(() => {
 		async function fetchMember() {
 			const response = await fetch(`http://localhost:3001/members/${id}`);
 			const data = await response.json();
 			setMember(data);
 		}
 		fetchMember();
-		// handleDelete();
 	}, []);
 
 	return (
 		<div>
-			<button>Delete</button>
-			<button>Save</button>
-			{member && <MemberCard key={member.id} member={member} />}
+			{member && <EditMemberCard key={member.id} member={member} />}
+			<button onClick={handleDelete}>Delete</button>
+			<button>
+				<Link to="/member/all">Back to members</Link>
+			</button>
 		</div>
 	);
 }
