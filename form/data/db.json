@@ -1,13 +1,7 @@
 {
   "members": [
     {
-      "name": "asdasd",
-      "age": "1394193",
-      "email": "dlfjdi@gmail.com",
-      "id": 4
-    },
-    {
-      "name": "name",
+      "name": "namerr",
       "age": "1",
       "email": "kjas@maik.com",
       "id": 5
@@ -65,6 +59,20 @@
       "age": "34",
       "email": "test@gmail.com",
       "id": 15
+    },
+    {
+      "name": "asd",
+      "data": {
+        "age": "asd",
+        "email": "asd"
+      },
+      "id": 16
+    },
+    {
+      "name": "asd",
+      "age": "asd",
+      "email": "asd",
+      "id": 17
     }
   ]
 }
