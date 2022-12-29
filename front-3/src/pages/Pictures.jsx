@@ -1,8 +1,23 @@
 import { useState, useEffect } from 'react';
 import pic from '../img/floating.png';
 import CardTable from '../components/CardTable';
-
+import { Button } from '../components/Button.styled';
+import { AppContainer } from '../components/AppContainer.styled';
 export default function Pictures() {
+	//this code is to sort the data
+	const [ sorted, setSorted ] = useState((sorted: 'id'), (reversed: false));
+	const sortById = () => {
+		setSorted({ sorted: 'id', reversed: !sorted.reversed });
+		const picturesCopy = [ ...pictures ];
+		picturesCopy.sort((a, b) => {
+			if (sorted.reversed) {
+				return b.id - a.id;
+			}
+			return a.id - b.id;
+		});
+		setPictures(picturesCopy);
+	};
+
 	//this code is to fetch the data from the API
 	const [ pictures, setPictures ] = useState([]);
 
@@ -46,7 +61,20 @@ export default function Pictures() {
 				<p>Add your pictures here</p>
 				<img src={pic} alt="moonlight" width="200px" height="200px" />
 			</div>
+			{/* here is the buttons to sort the data */}
+			<div className="sort">
+				<AppContainer backgroundColor="purple">
+					<Button onClick={sortByName} backgroundColor="violet">
+						Sort by name
+					</Button>
+					<Button onClick={SortById} backgroundColor="violet">
+						Sort by id
+					</Button>
+				</AppContainer>
+			</div>
+			{/* //this code is to map the data from the API */}
 			<div className="tables">{pictures.map((picture) => <CardTable key={picture.id} picture={picture} />)}</div>
+			{/* this code is to handle the form submission */}
 			<div className="add">
 				<h2>Add a picture</h2>
 				<form onSubmit={handleSubmit}>

@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home';
 import Pictures from './pages/Pictures';
 import SinglePicture from './pages/SinglePicture';
-import './App.css';
+// import './App.scss';
+import { GlobalStyles } from './GlobalStyles';
 
 
 // import UserList from './pages/UserList';
@@ -17,6 +18,7 @@ import './App.css';
 function App() {
   return (
     <div className="app">
+      <GlobalStyles />
     <BrowserRouter>
       <nav className='menu'>
       <li><Link to = "/"> Home</Link> </li>
@@ -35,6 +37,7 @@ function App() {
         <Route path="/search" element={<Search />} /> */}
       </Routes>
     </BrowserRouter>
+
     </div>
   );
 }
